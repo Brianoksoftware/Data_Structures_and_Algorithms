@@ -41,7 +41,7 @@ llobj.insertEnd(30)
 llobj.insertFront(9)
 
 
-#Singly linked list
+#Singly linked list...second example
 class Node:
     def __init__(self,data):
         self.data = data
@@ -62,6 +62,15 @@ class Linkedlist:
             current = self.head
             while current != None:
                 print(current.data, end="->")
+                current = current.link
+            print("None")
+
+llobj = Linkedlist()
+llobj.printOut()
+#llobj.insertStart(5)
+
+
+            
             
         
         
