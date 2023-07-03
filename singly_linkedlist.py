@@ -22,6 +22,9 @@ class Linkedlist:
             while current.link != None:
                 current = current.link
             current.link = newnod
+            
+    def insertEnd(self):
+        pass
     
     def printOut(self):
         if self.head == None:
@@ -57,7 +60,7 @@ class Linkedlist:
 
     def printOut(self):
         if self.head == None:
-            print("Linked list empty!)
+            print("Linked list empty!")
         else:
             current = self.head
             while current != None:
@@ -67,7 +70,13 @@ class Linkedlist:
 
 llobj = Linkedlist()
 llobj.printOut()
-#llobj.insertStart(5)
+llobj.insertStart(5)
+llobj.printOut()
+print("---------------------)
+
+llobj.insertStart(3)
+llobj.insertStart(1)
+llobj.printOut()
 
 
             
