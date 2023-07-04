@@ -23,9 +23,6 @@ class Linkedlist:
                 current = current.link
             current.link = newnod
             
-    def insertEnd(self):
-        pass
-    
     def printOut(self):
         if self.head == None:
             print("Linked list empty!")
@@ -49,6 +46,7 @@ class Node:
     def __init__(self,data):
         self.data = data
         self.link = None
+        
 class Linkedlist:
     def __init__(self):
         self.head = None
@@ -58,6 +56,16 @@ class Linkedlist:
         newnode.link = self.head
         self.head = newnode
 
+    def insertEnd(self, data):
+        newnodez = Node(data)
+        if self.head is  None:
+            self.head = newnodez
+        else:
+            current = self.head
+            while current.link != None:
+                current = current.link
+            current.link = newnodez
+        
     def printOut(self):
         if self.head == None:
             print("Linked list empty!")
@@ -72,10 +80,12 @@ llobj = Linkedlist()
 llobj.printOut()
 llobj.insertStart(5)
 llobj.printOut()
-print("---------------------)
+print("---------------------")
 
 llobj.insertStart(3)
 llobj.insertStart(1)
+llobj.insertEnd(7)
+llobj.insertEnd(9)
 llobj.printOut()
 
 
@@ -90,22 +100,3 @@ llobj.printOut()
          
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-llobj.printOut() 
