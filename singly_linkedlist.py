@@ -89,7 +89,7 @@ llobj.insertEnd(9)
 llobj.printOut()
 
 '''
-Final singly linked list data structure EXAMPLE with 
+Singly linked list data structure EXAMPLE with 
 methods to insert nodes at front & end of Linked list
 '''
 class Node:
@@ -135,6 +135,59 @@ llistobj.insertMwisho(6)
 llistobj.insertMwisho(8)
 llistobj.insertMwisho(10)
 llistobj.printer()
+
+
+'''
+Singly linked list data structure EXAMPLE with 
+methods to insert nodes at front & end of Linked list...FINAL IMPLEMENTATION
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.link = None
+        
+class Linkedlist:
+    def __init__(self):
+        self.head = None
+
+    def display(self):
+        if self.head == None:
+            print("LINKED LIST EMPTY!")
+        else:
+            current = self.head
+            while current != None:
+                print(current.data, end="->")
+                current = current.link 
+            print("None")
+
+    def addFront(self, data):
+        nohde = Node(data)
+        nohde.link = self.head
+        self.head = nohde
+
+    def addEnd(self, data):
+        nohdeh = Node(data)
+        current = self.head
+        while current.link != None:
+            current = current.link 
+        current.link = nohdeh
+
+llist = Linkedlist()        
+llist.display()
+
+llist.addFront(4)
+llist.addFront(3)
+llist.addFront(1)
+llist.display()
+
+llist.addEnd(5)
+llist.addEnd(7)
+llist.addEnd(9)
+llist.display()
+
+
+
+
 
 
 
