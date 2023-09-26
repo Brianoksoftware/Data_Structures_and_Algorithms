@@ -1,4 +1,4 @@
-#Quicksort algorithm implemented recursively
+#Quicksort algorithm implemented recursively...choosing middle element as pivot
 def quick_sort(arr):
 	if len(arr) <=1:
 		return arr
@@ -15,22 +15,26 @@ def quick_sort(arr):
 		return quick_sort(lesser) + [pivot] + quick_sort(greater)
 print("Quicksorted:", quick_sort([5,2,3,1,4,0]))
 
-#Quicksort algorithm implemented recursively...FINAL IMPLEMENTATION
-def quicksoort(arr):
+
+#Quicksort algorithm implemented recursively...an implementation involving choosing the pivot randomly
+import random
+
+def quicksort(arr):
 	if len(arr) <= 1:
 		return arr 
 	else:
-		pivot = arr[len(arr)//2]
+		pivot = random.choice(arr)
 		lesser = []
 		greater = []
 
-		for i in arr:
-			if arr[i] < pivot:
-				lesser.append(arr[i])
-			elif arr[i] > pivot:
-				greater.append(arr[i])
-		return quicksoort(lesser) + [pivot] + quicksoort(greater)
-print("ALMOST FINAL QUICKSORT:", quicksoort([5,3,1,4,2,0]))
+		for elem in range(len(arr)):
+			if arr[elem] < pivot:
+				lesser.append(arr[elem])
+			elif arr[elem] > pivot:
+				greater.append(arr[elem])
 
+		return quicksort(lesser) + [pivot] + quicksort(greater)
+
+print("sorted list:", quicksort([5,3,9,0,2,4,1,6,8,7]))
 
 
