@@ -11,12 +11,20 @@ stack_list.append(6)
 stack_list.append(7)
 print("New list:", stack_list)
 
-#pop operation/remove last item in the stack
-remove_last = stack_list.pop()
+#pop operation/remove last item in the stack,check if stack is empty first
+if len(stack_list) == 0:
+	print("error")
+else:
+	remove_last = stack_list.pop()
 print("Last item removed:", remove_last)
 print("Current list:", stack_list)
 
-#peak operation
-element_check = stack_list[-1]
+#peek operation,check if stack is empty first
+
+if len(stack_list) == 0:
+	print("error")
+else:
+	element_check = stack_list[-1]
+
 print("Last item in stack now:", element_check)
 print("Current list:", stack_list)
