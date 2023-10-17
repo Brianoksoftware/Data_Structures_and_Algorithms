@@ -28,3 +28,49 @@ else:
 
 print("Last item in stack now:", element_check)
 print("Current list:", stack_list)
+
+
+
+'''
+Stack data structure...last in, first out(LIFO)
+Implementation using classes & OOP
+'''
+class Stack:
+	def __init__(self):
+		self.stack =[]
+
+	def push(self, element):
+		self.stack.append(element)
+
+	def pop(self): #insertion operation
+		if self.is_empty():
+			print("Stack empty!")
+		else:
+			return self.stack.pop()
+
+	def peek(self):
+		if not self.is_empty():
+			return self.stack[-1]
+		else:
+			print("Stack empty!")
+
+	def is_empty(self):
+		return len(self.stack) == 0
+
+	def __str__(self): #The __str__ method allows you to define a human-readable string representation of your class. 
+		return str(self.stack)
+
+
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(35)
+
+print("New stack:", stack)
+print("Last element:", stack.peek())
+
+stack.pop()
+print("New stack:", stack)
+print("Last element:", stack.peek())
+
+
