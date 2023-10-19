@@ -30,6 +30,27 @@ item = 2
 
 #print("Item is at position:", binary_search(arr_sorted, item))
 print("Item is at position:", binary_search(arr, item))
+
+#Another binary seach example
+def binarysearch(arr, target_value):
+	lower_bound = 0
+	upper_bound = len(arr) - 1
+
+	while lower_bound <= upper_bound:
+		midpoint_index = (lower_bound + upper_bound) //2
+
+		if arr[midpoint_index] == target_value:
+			return midpoint_index #Return the index where the target value is
+		elif arr[midpoint_index] < target_value:
+			lower_bound = midpoint_index + 1 #Update lower bound
+		else:
+			upper_bound = midpoint_index - 1 #Update upper bound
+	return None #if target value not in array
+
+arr = [1,3,5,6,7]
+target_value = 0
+print(f"Target value {target_value} at position:", binarysearch(arr, target_value))
+
     
    
     
