@@ -17,7 +17,7 @@ class Queue:
 			print("Queue is empty!")
 			return None #not necessary...python returns None automatically
 	'''
-	def peek(self): #peek operations are traditionally not done in queues
+	def peek(self): 
 		if not self.is_empty():
 			item = self.dequeue()
 			self.enqueue(item)
