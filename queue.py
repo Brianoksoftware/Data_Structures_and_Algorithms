@@ -17,7 +17,7 @@ class Queue:
 			print("Queue is empty!")
 			return None #not necessary...python returns None automatically
 	'''
-	def peek(self): 
+	def peek(self):
 		if not self.is_empty():
 			item = self.dequeue()
 			self.enqueue(item)
@@ -50,4 +50,5 @@ print()
 queue.dequeue() #removes first element in first (FIFO)
 
 queue.display()
+print("Queue:", queue) #using __str__
 
