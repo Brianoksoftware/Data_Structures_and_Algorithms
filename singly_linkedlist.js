@@ -20,7 +20,7 @@ class Linkedlist{
 	}
 
 	insertEnd(data){
-		const new_node = new Node(data);
+	    const new_node = new Node(data);
 	    if (this.headnode === null) {
 	      this.headnode = new_node;
 	    } else {
