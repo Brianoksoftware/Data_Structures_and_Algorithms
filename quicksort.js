@@ -45,3 +45,30 @@
 	}
 	console.log("result:" + quicksrrt([3,1,2,4,0]));
 
+
+
+//quicksort algorithm in ES6 using recursion...mastery 1
+arr = [4,3,2,1];
+
+const quicksort = (arr) => {
+    if(arr.length <= 1){
+        return arr;
+    }
+    //choosing middle index
+    const pivot =arr[Math.floor(arr.length/2)];
+    const lesser = [];
+    const greater = [];
+    
+    for(let x=0;x<arr.length;x++){
+        if(arr[x] < pivot){
+            lesser.push(arr[x]);
+        }
+        else if(arr[x] > pivot){
+            greater.push(arr[x]);
+        }
+    }
+    return quicksort(lesser).concat([pivot], quicksort(greater));
+}
+
+console.log("Quicksorted array:", quicksort(arr))
+
