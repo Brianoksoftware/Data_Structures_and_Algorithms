@@ -38,3 +38,24 @@ def quicksort(arr):
 print("sorted list:", quicksort([5,3,9,0,2,4,1,6,8,7]))
 
 
+#quicksort algorithm in python using recursion...mastery 1
+arr = [6,5,4,3,2,1]
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    #Middle index as pivot...value floored
+    pivot = arr[len(arr)//2]
+    lessr = []
+    greatr = []
+    
+    for i in range(len(arr)):
+        if arr[i] < pivot:
+            lessr.append(arr[i])
+        elif arr[i] > pivot:
+            greatr.append(arr[i])
+    return quicksort(lessr) + [pivot] + quicksort(greatr)
+
+print("Quicksorted list:", quicksort(arr))
+
+
