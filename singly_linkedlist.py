@@ -186,6 +186,7 @@ llist.addEnd(9)
 llist.display()
 
 
+
 #Another singly linked list
 class Node:
     def __init__(self, data):
