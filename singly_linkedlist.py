@@ -186,6 +186,52 @@ llist.addEnd(9)
 llist.display()
 
 
+#Another singly linked list
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.link  = None
+    
+class Linkedlist:
+    def __init__(self):
+        self.headNode = None
+    
+    def printerr(self):
+        
+        if self.headNode == None:
+            print("Linked list empty!")
+        else:
+            currentNode = self.headNode
+            while currentNode != None:
+                print(currentNode.data, end="->")
+                currentNode = currentNode.link
+            print("None")
+            
+    def insertFront(self, data):
+        newnode = Node(data)
+        newnode.link = self.headNode
+        self.headNode = newnode
+    
+    def insertEnd(self, data):
+        newnode = Node(data)
+        currentNode = self.headNode
+        
+        while currentNode.link != None:
+            currentNode = currentNode.link 
+        currentNode.link = newnode
+            
+
+llist = Linkedlist()
+llist.printerr()
+llist.insertFront(5)
+llist.insertFront(3)
+llist.insertFront(1)
+
+llist.insertEnd(6)
+llist.insertEnd(7)
+llist.insertEnd(8)
+llist.printerr()
+
 
 
 
