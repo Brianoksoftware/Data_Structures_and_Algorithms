@@ -59,3 +59,24 @@ def quicksort(arr):
 print("Quicksorted list:", quicksort(arr))
 
 
+#Another quicksort implemented recursively
+arry = [5,2,1,3,4]
+def quick_sort(arry):
+	if len(arry) <= 1:
+		return arry
+	pivot = arry[len(arry)//2]
+	lesser = []
+	greater = []
+	
+	for i in range(len(arry)):
+		if arry[i] < pivot:
+			lesser.append(arry[i])
+		elif arry[i] > pivot:
+			greater.append(arry[i])
+	return quick_sort(lesser) + [pivot] + quick_sort(greater)
+
+print("Quicksorted list:", quick_sort(arry))
+
+
+
+
