@@ -104,5 +104,30 @@ print("Quicksorted list:", quick_sort(arry))
 
 
 
+#Quicksort algorithm implemented recursively.
+#It takes user input and uses the integers to populate a list
+array = []
+
+for x in range(5):
+	y = int(input("Enter a number:"))
+	array.append(y)
+
+def quicksort(array):
+	if len(array) <= 1:
+		return array
+
+	pivot = array[len(array)//2]
+	lesser = []
+	greater = []
+
+	for index in range(len(array)):
+		if array[index] < pivot:
+			lesser.append(array[index])
+		elif array[index] > pivot:
+			greater.append(array[index])
+	return quicksort(lesser) + [pivot] + quicksort(greater)
+
+print("Quicksorted array:", quicksort(array))
+
 
 
