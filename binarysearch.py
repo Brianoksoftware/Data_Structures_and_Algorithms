@@ -52,7 +52,7 @@ target_value = 0
 print(f"Target value {target_value} at position:", binarysearch(arr, target_value))
 
 
-#Binary search...implemented recursively
+#Binary search algorithm...implemented recursively
 target = 3
 def binarysearch(arr, target, low, high):
 	if low <= high:
