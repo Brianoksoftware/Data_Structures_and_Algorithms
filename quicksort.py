@@ -131,3 +131,27 @@ print("Quicksorted array:", quicksort(array))
 
 
 
+#Quicksort...implemented recursively
+arr = [6,5,2,9,1]
+
+def quick_sort(arr):
+	if len(arr) <= 1:
+		return arr
+
+	pivot = arr[len(arr) //2 ]
+	lesser= []
+	greater = []
+
+	for elem in range(len(arr)):
+		if arr[elem] < pivot:
+			lesser.append(arr[elem])
+		elif arr[elem] > pivot:
+			greater.append(arr[elem])
+	return quick_sort(lesser) + [pivot] + quick_sort(greater)
+
+print("Quicksorted list:", quick_sort(arr))
+
+
+
+
+
