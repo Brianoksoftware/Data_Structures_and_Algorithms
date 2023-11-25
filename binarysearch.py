@@ -51,6 +51,24 @@ arr = [1,3,5,6,7]
 target_value = 0
 print(f"Target value {target_value} at position:", binarysearch(arr, target_value))
 
+
+#Binary search...implemented recursively
+target = 3
+def binarysearch(arr, target, low, high):
+	if low <= high:
+		midpoint = (low + high) // 2
+
+		if arr[midpoint] == target:
+			return midpoint
+		elif arr[midpoint] > target:
+			return binarysearch(arr, target, low, midpoint - 1)
+		else:
+			return binarysearch(arr, target, midpoint + 1, high)
+	return None
+
+print(f"The target value:{target} is at index:", binarysearch([1,2,3,4], target,1,4))
+
+
     
    
     
