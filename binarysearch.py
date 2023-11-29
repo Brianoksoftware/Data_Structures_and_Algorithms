@@ -110,7 +110,32 @@ def binary_search(arr, target_value, lower_bound, higher_bound):
 
 print(f"The value: {target_value} is at index:{binary_search(arr, target_value, lower_bound, higher_bound)}")
 
-    
+
+
+#Binary search algorithm implemented recursively
+unsorted_array = [2,5,1,4,3]
+arr = sorted(unsorted_array) #arr =[1,2,3,4,5]
+lower = 0
+target_value = 1
+higher = len(arr) - 1
+
+def binarysearch(arr, target_value, lower, higher):
+	if lower <= higher:
+		midpoint_index = (lower + higher) // 2
+
+		if arr[midpoint_index] == target_value:
+			return midpoint_index
+
+		elif arr[midpoint_index] > target_value:
+			return binarysearch(arr, target_value, lower, midpoint_index - 1)
+		else:
+			return binarysearch(arr, target_value, midpoint_index + 1, higher)
+
+	else:
+		return None
+
+print(f"The target value:{target_value} is at index:{binarysearch(arr, target_value, lower, higher)}")
+
    
     
   
