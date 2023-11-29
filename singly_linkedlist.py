@@ -233,7 +233,48 @@ llist.insertEnd(7)
 llist.insertEnd(8)
 llist.printerr()
 
+#Another Singly linked list data structure implemented iteratively
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.link = None
 
+class Linkedlist:
+  def __init__(self):
+    self.headnode = None
+
+  def display(self):
+    if self.headnode == None:
+      print("Linked list empty!")
+    currentnode = self.headnode
+    while currentnode != None:
+      print(currentnode.data, end="->")
+      currentnode = currentnode.link
+    print("None")
+  
+  def addFront(self, data):
+    node = Node(data)
+    node.link = self.headnode
+    self.headnode = node
+
+  def addEnd(self, data):
+    newnode = Node(data)
+    currentnode = self.headnode
+    while currentnode.link != None:
+      currentnode = currentnode.link
+    currentnode.link = newnode
+
+
+llist = Linkedlist()
+llist.addFront(3)
+llist.addFront(2)
+llist.addFront(1)
+
+llist.addEnd(4)
+llist.addEnd(5)
+llist.addEnd(6)
+
+llist.display()
 
 
 
