@@ -136,6 +136,28 @@ def binarysearch(arr, target_value, lower, higher):
 
 print(f"The target value:{target_value} is at index:{binarysearch(arr, target_value, lower, higher)}")
 
+
+
+#Another binary search algorithm implemented recursively
+arr = sorted([8,3,7,1,0])
+#arr = [0, 1, 3, 7, 8]
+targetv = 7
+lowerb = 0
+upperb = len(arr) - 1
+
+def binarysearcho(arr, targetv, lowerb, upperb):
+	if lowerb <= upperb:
+		midpoint_index = (lowerb + upperb) // 2
+
+		if arr[midpoint_index] == targetv:
+			return midpoint_index
+		elif arr[midpoint_index] < targetv:
+			return binarysearcho(arr, targetv, midpoint_index + 1, upperb)
+		else:
+			return binarysearcho(arr, targetv, lowerb, midpoint_index - 1)
+
+print(f"The target value:{targetv} is at index:", binarysearcho(arr, targetv, lowerb, upperb))	
+
    
     
   
