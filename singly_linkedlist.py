@@ -277,6 +277,54 @@ llist.addEnd(6)
 llist.display()
 
 
+#Iterative singly linkedlist
+class Node:
+	def __init__(self, data):
+		self.data = data
+		self.link = None 
+
+class Linkedlist:
+	def __init__(self):
+		self.headnode = None 
+
+	def printerrr(self):
+		if self.headnode is None:
+			print("Linked list empty!")
+		currentnode = self.headnode
+		while currentnode is not None:
+			print(currentnode.data, end="->")
+			currentnode = currentnode.link 
+		print("None")
+
+	def insertStart(self, data):
+		node = Node(data)
+		node.link = self.headnode
+		self.headnode = node
+
+	def insertEnd(self, data):
+		newnode = Node(data)
+		currentnode = self.headnode
+		while currentnode.link is not None:
+		 	currentnode = currentnode.link
+		currentnode.link = newnode
+
+
+llist = Linkedlist()
+llist.insertStart(3)
+llist.insertStart(2)
+llist.insertStart(1)
+
+llist.insertEnd(4)
+llist.insertEnd(5)
+llist.insertEnd(6)
+llist.insertEnd(7)
+llist.printerrr()
+
+
+			
+
+
+
 
 
             
