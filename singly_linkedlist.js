@@ -65,3 +65,58 @@ llist.insertEnd(9);
 llist.insertEnd(10);
 
 llist.display()
+
+
+
+//Iterative singly linked list
+class Node{
+	constructor(data){
+		this.data = data;
+		this.link = null;
+	}
+}
+
+class Linkedlist{
+	constructor(){
+		this.headnode = null;
+	}
+
+	displayer(){
+		if(this.headnode == null){
+			console.log("Linked list empty!");
+		}
+		else{
+			let currentnode = this.headnode;
+
+			while(currentnode != null){
+				process.stdout.write(`${currentnode.data} -> `);//console.log(currentnode.data);
+				currentnode = currentnode.link;
+			}
+			console.log("None");
+		}
+	}
+
+	insertFront(data){
+		const node = new Node(data);
+		node.link = this.headnode;
+		this.headnode = node;
+	}
+
+	insertBack(data){
+		const newnode = new Node(data);
+		let currentnode = this.headnode;
+		while(currentnode.link != null){
+			currentnode = currentnode.link;
+		}
+		currentnode.link = newnode;
+	}
+}
+
+const llist = new Linkedlist();
+llist.insertFront(2);
+llist.insertFront(1);
+
+llist.insertBack(3);
+llist.insertBack(4);
+
+llist.displayer();
