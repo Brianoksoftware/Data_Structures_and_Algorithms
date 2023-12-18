@@ -194,6 +194,29 @@ print("Quicksorted array:", quicksorto(arr))
 
 
 
+#Quicksort algorithm...recursively
+arr = [4,2,1,3,0]
+
+def quicksort(arr):
+	if len(arr) <= 1:
+		return arr 
+
+	pivot = arr[len(arr)//2]
+	lesser = []
+	greater = []
+
+	for i in range(len(arr)):
+		if arr[i] < pivot:
+			lesser.append(arr[i])
+		elif arr[i] > pivot:
+			greater.append(arr[i])
+	return quicksort(lesser) + [pivot] + quicksort(greater)
+
+print("The Quicksorted list:", quicksort(arr))
+
+
+	
+
 
 
 
