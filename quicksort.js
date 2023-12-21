@@ -103,3 +103,33 @@ const quicksorto = (arr) => {
 console.log("Quickosorted array:", quicksorto(arr))
 
 
+
+
+//Quicksort algorithm implemented recursively
+let arry = [7,2,5,1,0,4,3];
+
+const quick_sort = (arry) => {
+	if(arry.length <= 1){
+		return arry;
+	}
+	else{
+		let pivot = arry[Math.floor(arry.length/2)];
+		let lesser = [];
+		let greater = [];
+
+		for(let i=0; i<arry.length; i++){
+			if(arry[i] < pivot){
+				lesser.push(arry[i]);
+			}
+			else if(arry[i] > pivot){
+				greater.push(arry[i]);
+			}
+		}
+		return quick_sort(lesser).concat([pivot], quick_sort(greater));
+	}
+}
+
+console.log("The quicksorted list is:", quick_sort(arry));
+
+
+
