@@ -158,6 +158,28 @@ def binarysearcho(arr, targetv, lowerb, upperb):
 
 print(f"The target value:{targetv} is at index:", binarysearcho(arr, targetv, lowerb, upperb))	
 
+
+
+#binary search...recursively
+unsorted_ary = [2,5,3,1,4]
+ary = sorted(unsorted_ary) #1,2,3,4,5...3 is at index 2
+targ_value = 4
+lowerb = 0
+upperb = len(ary) - 1
+#print("sortedo:",ary)
+def binarysearch(ary, targ_value, lowerb, upperb):
+	if lowerb <= upperb:
+		midp_index = (lowerb + upperb) // 2
+
+		if ary[midp_index] == targ_value:
+			return midp_index
+		elif ary[midp_index] < targ_value:
+			return binarysearch(ary, targ_value, midp_index + 1, upperb)
+		else:
+			return binarysearch(ary, targ_value, lowerb, midp_index - 1)
+
+print(f"The target value of {targ_value} is at index:", binarysearch(ary, targ_value, lowerb, upperb))
+
    
     
   
