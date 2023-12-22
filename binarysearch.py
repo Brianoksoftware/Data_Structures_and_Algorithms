@@ -180,6 +180,48 @@ def binarysearch(ary, targ_value, lowerb, upperb):
 
 print(f"The target value of {targ_value} is at index:", binarysearch(ary, targ_value, lowerb, upperb))
 
+
+
+
+
+
+
+#Binary search algorithm implemented recursively...first sorts list/array using Quicksort algorithm recursively
+unsorted_ary = [2,5,685,94,4,76,23,9,6,19670]
+
+def brian_quicksorter(unsorted_ary):
+	if len(unsorted_ary) <= 1:
+		return unsorted_ary
+	pivott = unsorted_ary[len(unsorted_ary) // 2]
+	lessr = []
+	greater = []
+
+	for item in range(len(unsorted_ary)):
+		if unsorted_ary[item] < pivott:
+			lessr.append(unsorted_ary[item])
+		elif unsorted_ary[item] > pivott:
+			greater.append(unsorted_ary[item])
+	return brian_quicksorter(lessr) + [pivott] + brian_quicksorter(greater)
+
+ary = brian_quicksorter(unsorted_ary) #1,2,3,4,5...3 is at index 2
+targ_value = 19670
+lowerb = 0
+upperb = len(ary) - 1
+#print("sortedo:",ary)
+def binarysearch(ary, targ_value, lowerb, upperb):
+	if lowerb <= upperb:
+		midp_index = (lowerb + upperb) // 2
+
+		if ary[midp_index] == targ_value:
+			return midp_index
+		elif ary[midp_index] < targ_value:
+			return binarysearch(ary, targ_value, midp_index + 1, upperb)
+		else:
+			return binarysearch(ary, targ_value, lowerb, midp_index - 1)
+
+print(f"The target value of {targ_value} is at index:", binarysearch(ary, targ_value, lowerb, upperb))
+
+
    
     
   
