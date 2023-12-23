@@ -222,7 +222,49 @@ def binarysearch(ary, targ_value, lowerb, upperb):
 print(f"The target value of {targ_value} is at index:", binarysearch(ary, targ_value, lowerb, upperb))
 
 
-   
+
+
+
+
+#Binary search algorithm that quicksorts first...both sorting & searching done recursively
+unsorted_array = [986,3,7,0,1,5,8,4]
+
+def brian_qsort(unsorted_array):
+	if len(unsorted_array) <= 1:
+		return unsorted_array
+	pivvot = unsorted_array[len(unsorted_array)//2]
+	lesserr = []
+	greaterr = []
+
+	for elem in range(len(unsorted_array)):
+		if unsorted_array[elem] < pivvot:
+			lesserr.append(unsorted_array[elem])
+		elif unsorted_array[elem] > pivvot:
+			greaterr.append(unsorted_array[elem])
+	return brian_qsort(lesserr) + [pivvot] + brian_qsort(greaterr)
+#print("brianqsort:", brian_qsort(unsorted_array))
+
+sortd_array = brian_qsort(unsorted_array) #[0,1,3,4,5,7,8,986]
+targ_val = 0
+lowerbo = 0
+upperbo = len(sortd_array) - 1
+
+def binarysrch(sortd_array, targ_val, lowerbo, upperbo):
+	if lowerbo <= upperbo:
+		midpoint_indx = (lowerbo + upperbo) // 2
+
+		if targ_val == sortd_array[midpoint_indx]:
+			return midpoint_indx
+		elif targ_val < sortd_array[midpoint_indx]:
+			return binarysrch(sortd_array, targ_val, lowerbo, midpoint_indx - 1)
+		else:
+			return binarysrch(sortd_array, targ_val, midpoint_indx + 1, upperbo)
+	print("ERROR!")
+
+print(f"The target value: {targ_val} is at index: {binarysrch(sortd_array, targ_val, lowerbo, upperbo)} of the sorted array: {sortd_array}")
+
+
+
     
   
   
