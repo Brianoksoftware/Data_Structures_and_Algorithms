@@ -23,3 +23,17 @@ def find_factorial(n):
     return n * find_factorial(n - 1)
 
 print(f"Factorial of {n} is:", find_factorial(n))
+
+
+
+
+#Factorial finder function using recursion
+n = int(input("Enter an integer to calculate it's factorial:"))
+def factorialx(n):
+  if n < 2:
+    return 1 
+  else:
+    return n * factorialx(n - 1)
+
+print(f"The factorial of {n} is:", factorialx(n))
+
