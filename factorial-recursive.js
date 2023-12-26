@@ -31,3 +31,18 @@ const find_factorial = (n) => {
 	}
 }
 console.log("Factorial of " + n + " is:", find_factorial(n))
+
+
+//ES6 Factorial finder...recursion
+n = 5
+const facto_finder = (n) => {
+	if(n < 2){
+		return 1
+	}
+	else{
+		return n * facto_finder(n - 1);
+	}
+}
+
+console.log("Factorial " + n + " ni :", facto_finder(n));
+
