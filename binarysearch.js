@@ -22,4 +22,4 @@ const binarysearch = (arr, target_value, lowerbound, upperbound) => {
 	}
 }
 
-console.log("The target value " + target_value + " is at index: " + binarysearch(arr, target_value, lowerbound, upperbound) + " of the SORTED array " + arr);
+console.log("The target value " + target_value + " is at index: " + binarysearch(arr, target_value, lowerbound, upperbound) + " of the SORTED array: " + JSON.stringify(arr));
