@@ -321,6 +321,59 @@ llist.insertEnd(7)
 llist.printerrr()
 
 
+
+#Singly linked list data structure implemented recursively.
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.link = None
+
+class Linkedlist:
+  def __init__(self):
+    self.headnode = None
+
+  def insertMbele(self, data):
+    node = Node(data)
+    node.link = self.headnode
+    self.headnode = node
+
+  def insertNyuma(self, data):
+    node = Node(data)
+    currentnode = self.headnode
+
+    while currentnode.link != None:
+      currentnode = currentnode.link
+    currentnode.link = node
+
+  def displayer(self):
+    if self.headnode == None:
+      print("Linked list empty!")
+    currentnode = self.headnode
+
+    while currentnode != None:
+      print(currentnode.data, end="->")
+      currentnode = currentnode.link
+    print("none")
+
+llisto = Linkedlist()
+
+llisto.insertMbele(3)
+llisto.insertMbele(2)
+llisto.insertMbele(1)
+
+llisto.insertNyuma(4)
+llisto.insertNyuma(5)
+llisto.insertNyuma(6)
+llisto.insertNyuma(10)
+
+llisto.displayer()
+
+      
+    
+
+
+
+
 			
 
 
