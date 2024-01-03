@@ -124,9 +124,9 @@ llist.displayer();
 
 
 
-//Another Singly Linkedlist data structure implemented iteratively
+//Another Singly Linkedlist data structure implemented iteratively in JS
 class Node{
-	constructor(){
+	constructor(data){
 		this.data = data;
 		this.link = null;
 	}
@@ -139,15 +139,47 @@ class Linkedlist{
 
 	displayer(){
 		if(this.headnode == null){
-			console.log("Linked list empty!");
+			console.log("Linked list empty oh!");
 		}
 		else{
-
+			let current_node = this.headnode
+			while(current_node != null){
+				process.stdout.write(`${current_node.data} -> `);
+				current_node = current_node.link;
+			}
+			console.log("none");
 		}
 	}
 
+	insertStart(data){
+		let node = new Node(data);
+		node.link = this.headnode;
+		this.headnode = node;
+	}
+
+	insertEnd(data){
+		let node = new Node(data);
+		let current_node = this.headnode;
+
+		while(current_node.link != null){
+			current_node = current_node.link;
+		}
+		current_node.link = node
+	}
+
+
 }
 
-let llist = new Linkedlist()
+let llist = new Linkedlist();
+
+llist.insertStart(3);
+llist.insertStart(2);
+llist.insertStart(1);
+llist.insertStart(0);
+s
+llist.insertEnd(4);
+llist.insertEnd(5);
+llist.insertEnd(6);
+
 llist.displayer();
 
