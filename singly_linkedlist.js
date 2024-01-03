@@ -120,3 +120,34 @@ llist.insertBack(3);
 llist.insertBack(4);
 
 llist.displayer();
+
+
+
+
+//Another Singly Linkedlist data structure implemented iteratively
+class Node{
+	constructor(){
+		this.data = data;
+		this.link = null;
+	}
+}
+
+class Linkedlist{
+	constructor(){
+		this.headnode = null;
+	}
+
+	displayer(){
+		if(this.headnode == null){
+			console.log("Linked list empty!");
+		}
+		else{
+
+		}
+	}
+
+}
+
+let llist = new Linkedlist()
+llist.displayer();
+
