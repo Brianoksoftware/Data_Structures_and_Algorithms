@@ -74,3 +74,29 @@ print("New stack:", stack)
 print("Last element:", stack.peek())
 
 
+'''
+Stack implementation using lists (LIFO)
+'''
+#Creating stack
+stack = []
+#Populating stack
+stack.append(2)
+stack.append(1)
+stack.append(0)
+print("Stack:", stack)
+#Pop operation...first check if stack is empty
+if len(stack) == 0:
+	print("Error")
+else:
+	stack.pop()
+	print("New Stack:", stack)
+#Peek operation...first check if stack is empty
+if len(stack) == 0:
+	print("Error")
+else:
+	peeked = stack[-1]
+	print("Peeked/last item:", peeked)
+
+
+
+
