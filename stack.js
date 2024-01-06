@@ -1,4 +1,35 @@
-//stack data structure implemented in ES6
+//Stack data structure implementation using arrays...LIFO
+const stack = [];
+
+//populate stack
+stack.push(7);
+stack.push(8);
+stack.push(9);
+
+console.log("Stack:", stack);
+//process.stdout.write(`${stack}\n`);
+
+//pop operation, first check if stack is empty
+if(stack.length == 0){
+	console.log("ERROR!stack empty.");
+}
+else{
+	stack.pop();
+}
+console.log("New stack after pop operation:", stack);
+
+//peep operation
+if(stack.length == 0){
+	console.log("ERROR!stack empty.");
+}
+else{
+	let peeked = stack[stack.length - 1];
+	console.log("Peeked/last item:", peeked);
+}
+
+
+
+//Stack data structure implemented in ES6 using OOP
 class Stack {
   constructor() {
     this.stack = [];
