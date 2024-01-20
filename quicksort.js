@@ -133,3 +133,35 @@ console.log("The quicksorted list is:", quick_sort(arry));
 
 
 
+//Quicksort algorithm in es6 javascript
+const arr_ = [4,98,574,0,2,7,1,5,3];
+
+const quicksorrrt = (arr_) => {
+	if(arr_.length <=1){
+		return arr_;
+	}
+	else{
+		let pivot = arr_[Math.floor(arr_.length/2)];
+		let lessr = [];
+		let greatr = [];
+
+		for(let i=0; i<= arr_.length;i++){
+			if(arr_[i] < pivot){
+				lessr.push(arr_[i]);
+			}
+			else if(arr_[i] > pivot){
+				greatr.push(arr_[i]);
+			}
+		}
+		return quicksorrrt(lessr).concat([pivot], quicksorrrt(greatr));
+	}
+}
+process.stdout.write(`Old unsorted array was: ${JSON.stringify(arr_)}`);
+console.log();
+console.log("The new Quicksorted array:", quicksorrrt(arr_));
+
+
+
+
+
+
