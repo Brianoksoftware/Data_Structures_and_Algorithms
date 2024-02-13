@@ -235,6 +235,28 @@ def q_sort(arr):
 print("Quicksorted array:", q_sort(arr))
 
 
+
+arr4y = [8,9,1,4,7,0,2,6]
+
+def quickssort(arr4y):
+	if len(arr4y) <= 1:
+		return arr4y
+	pivot = arr4y[len(arr4y)//2]
+	lessr = []
+	greatr = []
+
+	for item in range(len(arr4y)):
+		if arr4y[item] < pivot:
+			lessr.append(arr4y[item])
+		elif arr4y[item] > pivot:
+			greatr.append(arr4y[item])
+	return quickssort(lessr) + [pivot] + quickssort(greatr)
+print("Array after quicksort:", quickssort(arr4y))
+
+
+
+
+
            
 
 
