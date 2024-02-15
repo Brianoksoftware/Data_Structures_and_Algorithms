@@ -35,3 +35,12 @@ def factorialx(n):
 
 print(f"The factorial of {n} is:", factorialx(n))
 
+
+n =3
+def facto(n):
+	if n < 2:
+		return 1
+	else:
+		return n * facto(n - 1)
+
+print(facto(n))
