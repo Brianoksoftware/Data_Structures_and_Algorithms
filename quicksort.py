@@ -254,8 +254,27 @@ def quickssort(arr4y):
 print("Array after quicksort:", quickssort(arr4y))
 
 
+#QUICKSORT ALGORITHYM
+arr = [6,9,3,0,24,67,2,1234]
 
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot = arr[len(arr)//2]
+    lesser = []
+    greater = []
 
+    for i in range(len(arr)):
+        if arr[i] < pivot:
+            lesser.append(arr[i])
+        elif arr[i] > pivot:
+            greater.append(arr[i])
+    return quicksort(lesser) + [pivot] + quicksort(greater)
+
+print("Quicksorted list/array:", quicksort(arr))
+            
+    
 
            
 
