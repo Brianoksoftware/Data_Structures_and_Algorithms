@@ -1,4 +1,47 @@
-#Linked list data structure(singly linked list)
+#LINKED LIST DATA STRUCTURE...17/4/24
+class Node:
+    def __init__(self, data):
+         self.data = data
+         self.link = None
+   
+class Linkedlist:
+    def __init__(self):
+         self.headnode = None
+
+    def display(self):
+         if self.headnode == None:
+             print("None!")
+         else:
+             current_node = self.headnode
+             while current_node != None:
+                 print(current_node.data, end="->")
+                 current_node = current_node.link
+             print("None")
+        
+    def insertFront(self, data):
+         node = Node(data)
+         node.link = self.headnode
+         self.headnode = node
+
+    def insertEnd(self, data):
+        node = Node(data)
+        current_node = self.headnode
+
+        while current_node.link != None:
+            current_node = current_node.link
+        current_node.link = node
+
+    
+llist = Linkedlist()
+llist.insertFront(5)
+llist.insertFront(7)
+
+llist.insertEnd(12)
+llist.insertEnd(13)
+llist.display()
+
+
+#Linked list data structure(singly linked list)...previous date
 class Node:
     def __init__(self, data):
         self.data = data
