@@ -1,3 +1,168 @@
+#BINARY SEARCH ALGORITHM...
+sorted_arr = sorted([2,65,98,56,8,1,96,3])
+target_val = 1
+lowerbo =0
+upperbo = len(sorted_arr) - 1
+print("Sorted_arr:", sorted_arr)
+print()
+def binary_search(sorted_arr, target_val, lowerbo, upperbo):
+        if lowerbo <= upperbo:
+                midp_index = lowerbo + (upperbo - lowerbo)//2
+                #midp_index = (sorted_arr//2)
+                #midp_index = lowerbo + (upperbo - lowerbo)
+                if target_val == sorted_arr[midp_index]:
+                        return midp_index
+                elif target_val < sorted_arr[midp_index]:
+                        return binary_search(sorted_arr, target_val, lowerbo, midp_index - 1)
+                else:
+                        return binary_search(sorted_arr, target_val, midp_index +1, upperbo)
+
+print(f"The target value:{target_val} is at index:{binary_search(sorted_arr, target_val, lowerbo, upperbo)}")
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+#BINARY SEARCH ALGORITHM
+
+arr = [23,567,98,5,67,2345,1,3,7,99]
+sortd_arr = sorted(arr)
+print("Sorted array:", sortd_arr)
+
+target_val = 3
+lowerbound = 0
+upperbound = len(sortd_arr) - 1
+
+def binary_srch(sortd_arr, target_val, lowerbound, upperbound):
+        if lowerbound <= upperbound:
+                midp_index = (lowerbound + upperbound)//2
+                #midp_index = lowerbound + (upperbound - lowerbound)//2
+
+                if target_val == sortd_arr[midp_index]:
+                        return midp_index
+                elif target_val < sortd_arr[midp_index]:
+                        return binary_srch(sortd_arr, target_val, lowerbound, midp_index - 1)
+                else:
+                        return binary_srch(sortd_arr, target_val, midp_index + 1, upperbound)
+        
+        print("Binary search complete!")
+        print()
+print()
+print(f"The value:{target_val} is at index:{binary_srch(sortd_arr, target_val, lowerbound, upperbound)}")
+'''                
+                
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+sortd_array = [0,1,3,4,5,7,8,986] 
+#sortd_array = brian_qsort(unsorted_array) #[0,1,3,4,5,7,8,986]
+targ_val = 0
+lowerbo = 0
+upperbo = len(sortd_array) - 1
+
+def binarysrch(sortd_array, targ_val, lowerbo, upperbo):
+	if lowerbo <= upperbo:
+		midpoint_indx = (lowerbo + upperbo) // 2
+
+		if targ_val == sortd_array[midpoint_indx]:
+			return midpoint_indx
+		elif targ_val < sortd_array[midpoint_indx]:
+			return binarysrch(sortd_array, targ_val, lowerbo, midpoint_indx - 1)
+		else:
+			return binarysrch(sortd_array, targ_val, midpoint_indx + 1, upperbo)
+	print("ERROR!")
+
+print(f"The target value: {targ_val} is at index: {binarysrch(sortd_array, targ_val, lowerbo, upperbo)} of the sorted array: {sortd_array}")
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
 #BINARY SEARCH ALGORITHM...implemented recursively on 18/4/24
 arr = [23,567,98,5,67,2345,1,3,7,99]
 sortd_arr = sorted(arr)
