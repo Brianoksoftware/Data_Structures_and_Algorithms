@@ -1,5 +1,29 @@
 
 #QUICKSORT ALGORITHYM
+arr = [6,3,7,9,2,0,1]
+def qsort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[len(arr)//2]
+        lesser = []
+        equal = []
+        greater = []
+        
+        for i in range(len(arr)):
+            if(arr[i] < pivot):
+                lesser.append(arr[i])
+            elif arr[i] == pivot:
+                equal.append(arr[i])
+            else:
+                greater.append(arr[i])
+        
+        return qsort(lesser) + equal + qsort(greater)
+
+print("Quicksorted list:", qsort(arr))
+
+
+
 arr = [5,545,8,4,97,2132,2,1,9]
 
 def qsort(arr):
