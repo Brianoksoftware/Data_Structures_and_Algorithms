@@ -1,4 +1,59 @@
 #BINARY SEARCH ALGORITHM...
+
+'''
+DATA STRUCTURES AND ALGORITHMS
+Question:
+Please write a Python program that implements the binary search algorithm recursively. 
+Ensure the list/array is first sorted using the Quicksort algorithm recursively. 
+Here's an example list/array to use: [2, 5, 685, 94, 4, 76, 23, 9, 6, 19670]. 
+The target value to search for is 19670. 
+Provide the index where this target value is located after sorting and searching.  
+'''
+arr = [5,76,3,0,8,1,6,2,7]
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[len(arr)//2]
+        lesser = []
+        equal = []
+        greater = []
+
+        for i in range(len(arr)):
+            if arr[i] < pivot:
+                lesser.append(arr[i])
+            elif arr[i] == pivot:
+                equal.append(arr[i])
+            else:
+                greater.append(arr[i])
+        return quicksort(lesser) + equal + quicksort(greater)
+
+#print("Quicksorted list:", quicksort(arr))
+    
+srtd_arr = quicksort(arr)
+targ_val = 2
+lowerb = 0
+upperb = len(arr) - 1
+
+def binary_search(srtd_arr, targ_val, lowerb, upperb):
+    if lowerb <= upperb:
+        midp_index = lowerb + (upperb - lowerb)//2
+        if targ_val == midp_index:
+            return midp_index
+        elif targ_val < midp_index:
+            return binary_search(srtd_arr, targ_val, lowerb, midp_index -1)
+        else:
+            return binary_search(srtd_arr, targ_val, midp_index +1, upperb)
+
+print(f"The target value:{targ_val} is at the position index:{binary_search(srtd_arr, targ_val, lowerb, upperb)} of the array:{srtd_arr}")
+
+
+
+
+
+
+
+
 sorted_arr = sorted([2,65,98,56,8,1,96,3])
 target_val = 1
 lowerbo =0
@@ -20,36 +75,6 @@ def binary_search(sorted_arr, target_val, lowerbo, upperbo):
 print(f"The target value:{target_val} is at index:{binary_search(sorted_arr, target_val, lowerbo, upperbo)}")
                 
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87,44 +112,6 @@ print(f"The value:{target_val} is at index:{binary_srch(sortd_arr, target_val, l
 '''                
                 
               
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
