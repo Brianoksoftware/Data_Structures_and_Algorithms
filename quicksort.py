@@ -1,5 +1,5 @@
 
-#QUICKSORT ALGORITHYM
+#QUICKSORT ALGORITHYM implemented using recursion
 arr = [6,3,7,9,2,0,1]
 def qsort(arr):
     if len(arr) <= 1:
