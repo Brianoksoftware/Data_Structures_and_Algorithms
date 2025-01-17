@@ -1,3 +1,38 @@
+#quicksort algorithm implemented recursively in python
+array = [2,7,8,17,98,4]
+def qsort(array):
+	if len(array) <=1:
+		return array
+	pivot = array[len(array)//2]
+	lessr = []
+	equal = []
+	greater = []
+
+	for z in range(len(array)):
+		if array[z] < pivot:
+			lessr.append(array[z])
+		elif array[z] == pivot:
+			equal.append(array[z])
+		else:
+			greater.append(array[z])
+
+	return qsort(lessr) + equal + qsort(greater)
+
+print("QUICKSORTED ARRAY:", qsort(array))
+print()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #QUICKSORT ALGORITHYM implemented using recursion
 arr = [6,3,7,9,2,0,1]
