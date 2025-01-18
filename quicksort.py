@@ -1,3 +1,30 @@
+#quicksort algorithm implemented recursively
+arrz = [78,45,39,938,3,44,64,47]
+def quicksorrt(arrz):
+	if len(arrz) <=1:
+		return arrz
+	pivot = arrz[len(arrz)//2]
+	lesser = []
+	equal = []
+	greater = []
+
+	for y in range(len(arrz)):
+		if arrz[y] < pivot:
+			lesser.append(arrz[y])
+		elif arrz[y] == pivot:
+			equal.append(arrz[y])
+		else:
+			greater.append(arrz[y])
+	return quicksorrt(lesser) + equal + quicksorrt(greater)
+
+print("Quiksorted array/list:", quicksorrt(arrz))
+print()
+
+
+
+
+
+
 #quicksort algorithm implemented recursively in python
 array = [2,7,8,17,98,4]
 def qsort(array):
@@ -20,13 +47,6 @@ def qsort(array):
 
 print("QUICKSORTED ARRAY:", qsort(array))
 print()
-
-
-
-
-
-
-
 
 
 
